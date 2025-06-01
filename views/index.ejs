@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All chats</title>
+    <link rel="stylesheet" href="Style1.css">
+</head>
+
+<body>
+    <h2>All chat are shown here.</h2>
+    <%for(let chat of allchats) {%>
+        <div class="chat">
+            <h3> <b><i>
+                        <%= chat.from %> sends to <%= chat.to %>
+                    </i></b> </h3>
+            <p>
+                <%= chat.message %>
+            </p>
+        </div>
+        <div class="TED">
+            <div class="btns">
+                <form action="/chat/<%= chat._id %>/edit" method="GET">
+                    <button class="Edit">Edit message</button>
+                </form>
+                <form action="/chat/<%= chat._id %>/delete?_method=Delete" method="post">
+                    <button class="Delete">Delete</button>
+                </form>
+            </div>
+            <p class="date">
+                <%= chat.created_at.toString().split(" ")[4] %> <%= chat.created_at.toString().split(" ").slice(1,4).join("-") %>
+            </p>
+        </div>
+        <hr>
+        <% } %>
+            <footer>
+                <form method="post" action="/chat">
+                    <input type="text" placeholder="Enter the message you want to send" class="msgAre" name="msg">
+                    <input type="text" placeholder="Send by" class="name" name="from" required>
+                    <input type="text" placeholder="Send to" class="name" name="to" required>
+                    <button>Send ↑</button>
+                </form>
+            </footer>
+</body>
+
+</html>
