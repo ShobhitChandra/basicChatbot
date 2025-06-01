@@ -17,8 +17,8 @@ A simple real-time chat bot where **anyone can send, edit, or delete** any messa
 
 ## 📸 Demo
 
-![chat-demo](https://via.placeholder.com/600x300?text=Chat+Bot+Demo)  
-(*Replace this with an actual screenshot if desired*)
+![chat-demo](assets/Main.png)
+![chat-demo](assets/Edit-page.png)
 
 ---
 
